@@ -1,0 +1,13 @@
+.patients_header{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 2fr;
+  background-color: #f1f1f1;
+  padding: 15px 10px;
+}
+.header_item{
+  color: #545454;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}

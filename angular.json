@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "vetClinicApp"
+    }
+  },
+  "defaultProject": "vetClinicApp",
+  "cli": {
+    "analytics": false
+  }
 }

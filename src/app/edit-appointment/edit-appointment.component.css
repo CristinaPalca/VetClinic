@@ -1,0 +1,62 @@
+.appointment_submit{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  text-align: center;
+  padding: 10px 10px;
+}
+.appointment_submit *{
+  font-size: 14px;
+  color: #878787;
+}
+.appointment_submit select{
+  border: 1px solid #878787;
+  padding: 3px 5px;
+}
+.appointment_submit input{
+  padding: 3px 5px;
+}
+.date{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.date .input_group{
+  background-color: green;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: right;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper select, .wrapper input{
+  width: 100%;
+}
+.appointment_btns{
+  display: flex;
+  padding: 0 10px;
+  justify-content: flex-end;
+}
+.appointment_btns button{
+  padding: 3px 5px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.close_edit_btn{
+  background-color: #fff;
+  border: 1px solid #404040;
+  border-radius: 5px;
+}
+.submit_edit_btn{
+  background-color: #404040;
+  border: 1px solid #404040;
+  border-radius: 5px;
+}

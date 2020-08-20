@@ -1,0 +1,32 @@
+<div class="page_container">
+  <app-date></app-date>
+  <div class="section_container chart">
+    <div class="chart_title">Weekly evolution</div>
+    <div id="evolution_by_week" class="chart_wrapper">
+      <canvas id="week_chart">
+      </canvas>
+    </div>
+  </div>
+  <div class="section_container">
+    <div class="title">Today's appointments</div>
+    <div class="appointments_header">
+      <div class="daily_header_item">Hour</div>
+      <div class="daily_header_item">Doctor</div>
+      <div class="daily_header_item">Patient</div>
+      <div class="daily_header_item">Breed</div>
+      <div class="daily_header_item">Status</div>
+      <div class="daily_header_item">Diagnosis</div>
+    </div>
+    <div class="appointments_body">
+      <div class="line" *ngFor="let item of dailyAppointments">
+        <div class="hour">{{item.date | date: 'HH:mm'}}</div>
+        <div class="doctor">{{item.doctorsName}}</div>
+        <div>{{getPatientName(item.animalId)}}</div>
+        <div>{{getPatientBreed(item.animalId)}}</div>
+        <div>{{getStatus(item.status)}}</div>
+        <div>{{getDiagnosis(item)}}</div>
+      </div>
+    </div>
+    <div class="no_content_container" *ngIf="!hasAppointments">No appointments for today</div>
+  </div>
+</div>

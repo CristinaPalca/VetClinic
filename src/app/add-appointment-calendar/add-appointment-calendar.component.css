@@ -1,0 +1,37 @@
+.calendar{
+  max-width: 320px;
+}
+.calendar>*{
+  width: 100%;
+}
+.calendar_header{
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.calendar_table{
+  padding-top: 7px;
+}
+
+.calendar_table>*{
+  text-align: right;
+}
+
+button{
+  outline: none;
+  font-size: 16px;
+}
+button.day{
+  border: none;
+  background-color: inherit;
+  padding: 5px;
+}
+
+button.selected_day{
+  font-weight: 700;
+  color: #fff;
+  background-color: #8E8CFF;
+  border-radius: 10px;
+}

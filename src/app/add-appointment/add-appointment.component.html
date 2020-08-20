@@ -1,0 +1,18 @@
+<div class="page_container">
+  <app-date></app-date>
+  <div class="page_title">New Appointment</div>
+  <div class="section_container">
+    <div class="visit_grid">
+      <app-add-appointment-form (newPatientOutput)="updateNewPatient($event)"
+                                (newPatientBreedOutput)="updateNewPatientBreed($event)"
+                                class="form_wrapper"></app-add-appointment-form>
+      <app-add-appointment-calendar class="calendar_wrapper"></app-add-appointment-calendar>
+      <app-add-appointment-hours class="hours_wrapper"></app-add-appointment-hours>
+      <app-add-appointment-history *ngIf="false" class="history_wrapper"></app-add-appointment-history>
+    </div>
+  </div>
+  <div class="visit_btns">
+    <button class="cancel_visit_btn" (click)="cancelAppointment()">Cancel</button>
+    <button class="create_visit_btn" (click)="createAppointment()">Create</button>
+  </div>
+</div>

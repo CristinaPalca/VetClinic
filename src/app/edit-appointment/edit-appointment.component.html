@@ -1,0 +1,104 @@
+<div  *ngIf="appointment">
+  <div class="appointment_submit">
+    <div class="date">
+      <div class="input_group">
+        <select name="year" [(ngModel)]="selectedYear">
+          <option value="{{getInitialYear() - 1}}">{{getInitialYear() - 1}}</option>
+          <option value="{{getInitialYear()}}">{{getInitialYear()}}</option>
+          <option value="{{getInitialYear() + 1}}">{{getInitialYear() + 1}}</option>
+        </select>
+        <select name="month" [(ngModel)]="selectedMonth">
+          <option *ngFor="let month of months" value="{{month}}">{{month + 1 | number:'2.0'}}</option>
+        </select>
+      </div>
+      <div class="input_group">
+        <select name="day" [(ngModel)]="selectedDay">
+          <option *ngFor="let day of monthDays" value="{{day}}">{{day | number:'2.0'}}</option>
+        </select>
+        <select name="hour" [(ngModel)]="selectedHour">
+          <option *ngFor="let hour of openHours" value="{{hour}}">{{hour}}:{{getInitialMinutes() | number:'2.0'}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="wrapper">
+      <select name="doctor" [(ngModel)]="selectedDoctorName">
+        <option *ngFor="let doctor of doctors" value="{{doctor.name}}">{{doctor.name}}</option>
+      </select>
+    </div>
+    <div class="wrapper">
+      <select name="patient" [(ngModel)]="selectedPatientId">
+        <option *ngFor="let patient of patients" value="{{patient.id}}">{{patient.patientName}}</option>
+      </select>{{selectedPatientId}}
+    </div>
+    <div class="wrapper">
+      <select name="status" [(ngModel)]="selectedStatus">
+        <option *ngFor="let status of statuses; let i=index;" value="{{i}}">{{status}}</option>
+      </select>
+    </div>
+    <div class="wrapper">
+      <input type="text" [(ngModel)]="diagnosis" placeholder="{{getDiagnosis()}}">
+    </div>
+
+  </div>
+  <div class="appointment_btns">
+    <button class="close_edit_btn" (click)="closeUpdate()"><img src="/assets/images/gg_close.svg" height="15"></button>
+    <button class="submit_edit_btn" (click)="submitChanges()"><img src="/assets/images/submit.svg" height="15"></button>
+  </div>
+</div>
+
+
+<!--<form class="edit_container" *ngIf="appointment">
+  <div class="date">
+    <div class="input_group">
+      <select class="year" name="year" [(ngModel)]="newYear" [disabled]="!appointmentCreated()" [class.is-disabled]="!appointmentCreated()">
+        <option disabled>Year</option>
+        <option value="{{getYear()-1}}">{{getYear() - 1}}</option>
+        <option selected value="{{getYear()}}">{{getYear()}}</option>
+        <option value="{{getYear() + 1}}">{{getYear() + 1}}</option>
+      </select>
+      <select class="month" name="month" [(ngModel)]="newMonth" [disabled]="!appointmentCreated()" [class.is-disabled]="!appointmentCreated()">
+        <option disabled>Month</option>
+        <option *ngFor="let month of months" value="{{month}}" [defaultSelected]="checkMonth(month)">{{month}}</option>
+      </select>
+    </div>
+
+    <div class="input_group">
+      <select class="day" name="day" [(ngModel)]="newDay" [disabled]="!appointmentCreated()"
+              [class.is-disabled]="!appointmentCreated()">
+        <option disabled>Day</option>
+        <option *ngFor="let day of daysOfMonth" value="{{day}}">{{day}}</option>
+      </select>
+      <select class="hour" name="hour" [(ngModel)]="newHour"
+              [disabled]="!appointmentCreated()" [class.is-disabled]="!appointmentCreated()">
+        <option disabled>Hour</option>
+        <option *ngFor="let hour of hours" value="{{hour}}">{{hour}}:00</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="input_field" *ngIf="doctors">
+    <select name="doctor" [(ngModel)]="newDoctorName" (change)="setDoctor()" [disabled]="!appointmentCreated()" [class.is-disabled]="!appointmentCreated()">
+      <option *ngFor="let doctor of doctors" value="{{doctor.name}}" [defaultSelected]="checkDefaultDoctor(doctor.name)">{{doctor.name}}</option>
+    </select>
+  </div>
+  <div class="input_field" *ngIf="patients">
+    <select name="patient" [(ngModel)]="newPatientId" (change)="updatePatient()" [disabled]="!appointmentCreated()" [class.is-disabled]="!appointmentCreated()">
+      <option *ngFor="let p of patients" value="{{p.id}}"
+              [defaultSelected]="checkDefaultPatient(p.id)" [hidden]="isDefault(p)">{{p.patientName}}</option>
+    </select>
+  </div>
+  <div class="input_field">
+    <select name="status" [(ngModel)]="newStatus" [disabled]="!appointmentCreated()" [class.is-disabled]="!appointmentCreated()">
+      <option value="0" [defaultSelected]="checkStatus(0)">{{getStatus(0)}}</option>
+      <option value="1" [defaultSelected]="checkStatus(1)">{{getStatus(1)}}</option>
+      <option value="2" [defaultSelected]="checkStatus(2)"
+              [disabled]="!doneEnabled()">{{getStatus(2)}}</option>
+    </select>
+  </div>
+  <div class="input_field">
+    <input type="text" name="diagnosis" name="diagnosis" [(ngModel)]="newDiagnosis" placeholder="undefined">
+  </div>
+  <button type="reset" class="close_update" (click)="cancelUpdate()"><img src="/assets/images/ion_close.svg"></button>
+  <button type="submit" class="update" (click)="submitUpdate()"><img src="/assets/images/round-done.svg"></button>
+</form>
+-->

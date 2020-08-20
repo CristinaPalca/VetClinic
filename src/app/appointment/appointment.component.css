@@ -1,0 +1,121 @@
+.content_info{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.3fr;
+  text-align: center;
+  padding: 10px 10px;
+}
+.first_date{
+  font-weight: 500;
+  font-size: 20px;
+  color: #404040;
+}
+.second_date{
+  font-size: 16px;
+  color: #808080;
+}
+.content_item{
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content_item.doctor{
+  font-weight: 500;
+}
+
+.edit_container{
+  position: relative;
+  display: inline-block;
+}
+
+.edit_container>svg, .edit_container svg{
+  fill: #000;
+  cursor: pointer;
+}
+
+.extended_popup_edit{
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 4px #ddd;
+  min-width: 180px;
+  z-index: 1;
+}
+
+.extended_popup_edit>button{
+  width: 100%;
+  padding: 5px 10px 5px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.extended_popup_edit>button svg{
+  margin-right: 5px;
+}
+
+/*
+.edit_container:hover .extended_popup_edit{
+  display: block;
+}*/
+
+.extended_popup_edit button:hover{
+  background-color: #f4f4f4;
+}
+
+.extended_popup_edit .disabledExtend{
+  cursor: inherit;
+}
+.extended_popup_edit .disabledExtend svg{
+  opacity: 0.5;
+}
+
+.remove_check{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove_check .remove_bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.remove_check .check_wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px 30px;
+  font-size: 18px;
+  color: #404040;
+  z-index: 3;
+}
+
+.check_wrapper .confirm_btns{
+  margin-top: 10px;
+}
+.confirm_btns button{
+  width: 70px;
+  padding: 5px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+}
+.confirm_btns button:hover{
+  background-color: #ddd;
+}

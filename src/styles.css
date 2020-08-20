@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body, html{
+  margin: 0;
+  padding: 0;
+  background-color: #F9F9FF;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.page_container{
+  width: calc(100vw - 250px);
+  padding: 30px 30px;
+  height: auto;
+  min-height: 100vh;
+  margin: 0 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+}
+.page_container>*{
+  margin-bottom: 20px;
+}
+
+.section_container{
+  background-color: #fff;
+  -moz-box-shadow: 0 0 8px #ddd;
+  -webkit-box-shadow: 0 0 8px #ddd;
+  box-shadow: 0 0 8px #ddd;
+}
+
+.page_title{
+  font-size: 30px;
+  font-weight: 700;
+  color: #202020;
+}
+
+.hidden{
+  display: none;
+}
+
+.chart{
+  padding: 10px;
+}
+.chart_title, .title{
+  text-align: center;
+  font-size: 22px;
+  padding: 10px;
+  font-weight: 600;
+  color: #404040;
+}
+

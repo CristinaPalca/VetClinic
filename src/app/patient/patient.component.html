@@ -1,0 +1,40 @@
+<div class="patient_content" *ngIf="patient && appointments">
+  <div class="patient_intro">
+    <div class="patient_cell patient_name">
+      {{patient.patientName}}
+    </div>
+    <div class="patient_cell breed">
+      {{patient.breed}}
+    </div>
+    <div class="patient_cell">
+      {{appointments[0].date | date:'dd/LL/yyyy'}}
+    </div>
+    <div class="patient_cell">
+      {{appointments[0].doctorsName}}
+    </div>
+    <div class="patient_cell">
+      {{getDiagnosis(appointments[0])}}
+    </div>
+    <div class="patient_cell btns">
+      <button class="extend_history" (click)="toogleExtendHistory()">{{extendBtnContent}}</button>
+      <button class="patient_add_visit" (click)="redirectCreateAppointment()">Plan a visit</button>
+    </div>
+  </div>
+  <div class="patient_history" *ngIf="historyExtended">
+    <div class="history_header">
+      <div class="history_header_cell">Date</div>
+      <div class="history_header_cell">Doctor</div>
+      <div class="history_header_cell">Status</div>
+      <div class="history_header_cell">Diagnosis</div>
+    </div>
+    <div class="history_row" *ngFor="let app of appointments">
+      <div class="history_date">
+        <div class="history_day">{{app.date | date:'dd/LL/yyyy'}}</div>
+        <div class="history_time">{{app.date | date:'EEE, HH:mm'}}</div>
+      </div>
+      <div class="doctor">{{app.doctorsName}}</div>
+      <div class="status">{{getStatus(app)}}</div>
+      <div class="diagnosis">{{getDiagnosis(app)}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="page_container">
+  <app-date></app-date>
+  <div class="page_title">Patients</div>
+  <div class="section_container">
+    <div class="patients_header">
+      <div class="header_item">Name</div>
+      <div class="header_item">Breed</div>
+      <div class="header_item">Last Visit</div>
+      <div class="header_item">Doctor</div>
+      <div class="header_item">Diagnosis</div>
+      <div class="header_item"></div>
+    </div>
+    <div class="patients_content">
+      <app-patient *ngFor="let patient of patients" [patient]="patient"></app-patient>
+    </div>
+  </div>
+</div>

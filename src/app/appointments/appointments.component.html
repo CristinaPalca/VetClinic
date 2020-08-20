@@ -1,0 +1,83 @@
+<div class="page_container">
+  <app-date></app-date>
+  <div class="page_title">Appointments</div>
+
+  <div class="section_container">
+    <div class="table_actions">
+      <div class="filter_container">
+        <select [(ngModel)]="filterIndex">
+          <option value="-1" selected disabled>Filter by:</option>
+          <option value="0">Date</option>
+          <option value="1">Doctor</option>
+          <option value="2">Patient</option>
+          <option value="3">Status</option>
+          <option value="4">Diagnosis</option>
+        </select>
+        <input type="text" [(ngModel)]="filterValue" (keyup)="filterByColumn()" placeholder="Search here...">
+      </div>
+      <a routerLink="../add-appointment">+ New Appointment</a>
+    </div>
+    <div class="table_header">
+      <div class="header_item" (click)="sortByColumn(1)">
+        <div class="header_title">Date</div>
+        <div class="header_sort">
+          <div class="ascending">
+            <img src="/assets/images/ascending.svg">
+          </div>
+          <div class="descending">
+            <img src="/assets/images/descending.svg">
+          </div>
+        </div>
+      </div>
+      <div class="header_item" (click)="sortByColumn(2)">
+        <div class="header_title">Doctor</div>
+        <div class="header_sort">
+          <div class="ascending">
+            <img src="/assets/images/ascending.svg">
+          </div>
+          <div class="descending">
+            <img src="/assets/images/descending.svg">
+          </div>
+        </div>
+      </div>
+      <div class="header_item" (click)="sortByColumn(3)">
+        <div class="header_title">Patient</div>
+        <div class="header_sort">
+          <div class="ascending">
+            <img src="/assets/images/ascending.svg">
+          </div>
+          <div class="descending">
+            <img src="/assets/images/descending.svg">
+          </div>
+        </div>
+      </div>
+      <div class="header_item" (click)="sortByColumn(4)">
+        <div class="header_title">Status</div>
+        <div class="header_sort">
+          <div class="ascending">
+            <img src="/assets/images/ascending.svg">
+          </div>
+          <div class="descending">
+            <img src="/assets/images/descending.svg">
+          </div>
+        </div>
+      </div>
+      <div class="header_item" (click)="sortByColumn(5)">
+        <div class="header_title">Diagnosis</div>
+        <div class="header_sort">
+          <div class="ascending">
+            <img src="/assets/images/ascending.svg">
+          </div>
+          <div class="descending">
+            <img src="/assets/images/descending.svg">
+          </div>
+        </div>
+      </div>
+      <div class="header_item"></div>
+    </div>
+    <app-appointment *ngFor="let app of appointments" [appointment]="app"
+    (removed)="onRemoved($event)"></app-appointment>
+
+  </div>
+
+</div>
