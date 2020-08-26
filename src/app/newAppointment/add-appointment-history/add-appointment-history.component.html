@@ -1,0 +1,16 @@
+<div *ngIf="appointments" class="history_wrapper">
+  <div class="history_header">
+    <div>Date</div>
+    <div>Doctor</div>
+    <div>Status</div>
+    <div>Diagnosis</div>
+  </div>
+  <div class="history_content">
+    <div class="history_line" *ngFor="let app of appointments">
+      <div>{{app.date | date:'dd LLL, yyyy'}}</div>
+      <div>{{app.doctorsName}}</div>
+      <div>{{getStatus(app)}}</div>
+      <div>{{getDiagnosis(app)}}</div>
+    </div>
+  </div>
+</div>

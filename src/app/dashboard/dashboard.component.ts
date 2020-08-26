@@ -45,7 +45,6 @@ export class DashboardComponent implements OnInit {
           this.dailyPatients.push(patient);
         });
       });
-
       this.weeklyEvolution = this.getWeekStatistics();
       setTimeout(() => {
         this.getEvolutionByWeek();
@@ -53,7 +52,6 @@ export class DashboardComponent implements OnInit {
 
     });
   }
-
 
   sortAppointments(){
     this.dailyAppointments.sort((a, b) => {
@@ -100,8 +98,6 @@ export class DashboardComponent implements OnInit {
     return this.data.getStatus(statusId);
   }
 
-
-
   getWeekStatistics(){
     let tmpDay = new Date().getDate();
     let tmpArr = []; //to add days of week
@@ -125,9 +121,9 @@ export class DashboardComponent implements OnInit {
     for (let i = 0; i < 7; i++){
       let dayTemplate = '';
       if (new Date().getMonth() < 9){
-        dayTemplate = new Date().getFullYear() + '-0' + new Date().getMonth() + '-' + tmpArr[i];
+        dayTemplate = new Date().getFullYear() + '-0' + (new Date().getMonth() + 1) + '-' + tmpArr[i];
       }else{
-        dayTemplate = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + tmpArr[i];
+        dayTemplate = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + tmpArr[i];
       }
       this.data.getAppointmentsByDate(dayTemplate).subscribe(appointmentsPerDay => {
         evolArr[i] += appointmentsPerDay.length;

@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AppointmentsComponent} from './appointments/appointments.component';
-import {NewPatientVisitComponent} from './new-patient-visit/new-patient-visit.component';
+import {AppointmentsComponent} from './appointmentsPage/appointments/appointments.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {PatientsComponent} from './patients/patients.component';
+import {PatientsComponent} from './patientsPage/patients/patients.component';
 import {StatisticsComponent} from './statistics/statistics.component';
-import {AddAppointmentComponent} from './add-appointment/add-appointment.component';
+import {AddAppointmentComponent} from './newAppointment/add-appointment/add-appointment.component';
+import {AddAppointmentExistingComponent} from "./newAppointment/add-appointment-existing/add-appointment-existing.component";
 
 
 const routes: Routes = [
   {path: 'appointments', component: AppointmentsComponent},
-  {path: 'new-patient-visit', component: NewPatientVisitComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'patients', component: PatientsComponent},
   {path: 'statistics', component: StatisticsComponent},
   {path: 'add-appointment', component: AddAppointmentComponent},
+  {path: 'add-appointment-existing', component: AddAppointmentExistingComponent},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 ];
 

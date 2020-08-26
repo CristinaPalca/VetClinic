@@ -1,0 +1,20 @@
+<div class="visit_form">
+  <button (click)="moveToNewPatient()">Create a new patient</button>
+  <div class="input_group">
+    <label>Patient Name</label>
+    <select name="existingpatient" [(ngModel)]="patientId" (change)="updatePatient()"
+            required #patientName="ngModel">
+      <option value="-1" disabled selected>Select a patient</option>
+      <option *ngFor="let patient of patients" value="{{patient.id}}">{{patient.patientName}}</option>
+    </select>
+  </div>
+  <div class="input_group">
+    <label>Doctor Name</label>
+    <select name="existingDoctor" [(ngModel)]="existingDoctorName" (change)="updateDoctor()"
+            required #doctorName="ngModel">
+      <option value="" disabled selected>Select a doctor</option>
+      <option *ngFor="let doctor of doctors" value="{{doctor.name}}">{{doctor.name}}</option>
+    </select>
+  </div>
+  <div class="error" *ngIf="doctorName.touched && doctorName.invalid">Doctor required</div>
+</div>
